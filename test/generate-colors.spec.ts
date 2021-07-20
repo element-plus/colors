@@ -1,4 +1,4 @@
-import { generateColors, defaultColors } from "../src"
+import { generateColors, chalk } from "../src"
 
 describe('generateColors', () => {
 
@@ -42,15 +42,8 @@ describe('generateColors', () => {
         ]
     }
 
-    it('defaultColors', () => {
-      expect(defaultColors).toMatchObject({
-        primary: '#409EFF',
-        success: '#67C23A',
-        warning: '#E6A23C',
-        danger: '#F56C6C',
-        error: '#F56C6C',
-        info: '#909399',
-      })
+    it('presets', () => {
+      expect(chalk).toMatchObject(DEFAULT_COLORS)
     })
 
     it('options is string', () => {

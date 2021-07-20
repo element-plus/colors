@@ -7,9 +7,9 @@ import type { OutputColors, ColorOptions } from './types'
 function forSemantic(options: ColorOptions) {
   if (!options) return
   if ('danger' in options && (!('error' in options) || !options['error'])) {
-    options.error =  options.danger
+    options.error = options.danger
   } else if('error' in options && (!('danger' in options) || !options['danger'])) {
-    options.danger =  options.error
+    options.danger = options.error
   }
 }
 

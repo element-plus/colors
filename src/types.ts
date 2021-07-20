@@ -15,3 +15,7 @@ export interface OutputColors {
     error?: string[]
     info?: string[]
 }
+
+export interface PresetPalettes {
+  chalk?: OutputColors
+}

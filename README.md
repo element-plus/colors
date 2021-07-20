@@ -6,14 +6,16 @@ This project for build color utils for theme customization
 The mixing algorithm referenced from [dart-sass's mixColor](https://github.com/sass/dart-sass/blob/main/lib/src/functions/color.dart#_mixColors) algorithm
 
 Formula for calculating the primary color:
-> mix(white, primary, i * 10) // i from 0 to 9
+```js
+mix('#FFF', primary, i * 10) // i from 0 to 9
+```
 
 Formula for calculating the secondary color:
-> mix(white, color, 0)   // secondary color
-> \
-> mix(white, color, 80%) // secondary light color
-> \
-> mix(white, color, 90%) // secondary lighter color
+```js
+mix('#FFF', color, '0')      // secondary color
+mix('#FFF', color, '80%')    // secondary light color
+mix('#FFF', color, '90%')    // secondary lighter color
+```
 
 ## Usage
 
@@ -45,44 +47,68 @@ console.log(success)
 // ]
 console.log(warning)
 // [
-// 'rgba(230, 162, 60, 1)',
-// 'rgba(250, 236, 216, 1)',
-// 'rgba(253, 246, 236, 1)'
+//  'rgba(230, 162, 60, 1)',
+//  'rgba(250, 236, 216, 1)',
+//  'rgba(253, 246, 236, 1)'
+// ]
 console.log(danger)
 // [
-// 'rgba(245, 108, 108, 1)',
-// 'rgba(253, 226, 226, 1)',
-// 'rgba(254, 240, 240, 1)'
+//  'rgba(245, 108, 108, 1)',
+//  'rgba(253, 226, 226, 1)',
+//  'rgba(254, 240, 240, 1)'
 // ]
 console.log(error)
 // [
-// 'rgba(245, 108, 108, 1)',
-// 'rgba(253, 226, 226, 1)',
-// 'rgba(254, 240, 240, 1)'
+//  'rgba(245, 108, 108, 1)',
+//  'rgba(253, 226, 226, 1)',
+//  'rgba(254, 240, 240, 1)'
 // ]
 console.log(info)
 // [
-// 'rgba(144, 147, 153, 1)',
-// 'rgba(233, 233, 235, 1)',
-// 'rgba(244, 244, 245, 1)'
+//  'rgba(144, 147, 153, 1)',
+//  'rgba(233, 233, 235, 1)',
+//  'rgba(244, 244, 245, 1)'
 // ]
 ```
 
-### Default Colors
+### Preset colors
 
-We provide preset theme color schemes,  you can import them by defaultColors
+We provide preset colors, you can import them by `presetPalettes` or `paletteName`, all `paletteName` are listed below
 
 ```js
-import { defaultColors } from '@element-plus/colors'
+import { presetPalettes } from '@element-plus/colors'
+// or
+import { chalk } from '@element-plus/colors'
 
-const { primary, success, warning, danger, error, info } = defaultColors
-console.log(primary) // #409EFF
-console.log(success) // #67C23A
-console.log(warning) // #E6A23C
-console.log(danger)  // #F56C6C
-console.log(error)   // #F56C6C
-console.log(info)    // #909399
-````
+console.log(presetPalettes)
+// {
+//     chalk: [...]
+// }
+console.log(chalk)
+// {
+//     primary: [...]
+//     success: [...]
+//     warning: [...]
+//     danger:  [...]
+//     error:   [...]
+//     info:    [...]
+// }
+```
+
+#### chalk
+
+chalk is the default theme of element-plus
+
+```json
+{
+  "primary":  "#409EFF",
+  "success":  "#67C23A",
+  "warning":  "#E6A23C",
+  "danger":   "#F56C6C",
+  "error":    "#F56C6C",
+  "info":     "#909399"
+}
+```
 
 ## API
 
@@ -100,9 +126,9 @@ interface ColorOptions {
     warning?: string
     // If only one of error and danger is provided,
     // then that value will automatically be used to override the missing one
-    danger?: string
-    error: string[]
-    info?: string
+    danger?:  string
+    error:    string[]
+    info?:    string
 }
 ```
 If you not provide any valid options, then the function will return the default colors
@@ -113,9 +139,9 @@ interface OutputColors {
     primary: string[]
     success: string[]
     warning: string[]
-    danger: string[]
-    error: string[]
-    info: string[]
+    danger:  string[]
+    error:   string[]
+    info:    string[]
 }
 ```
 
