@@ -3,7 +3,7 @@ import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript2'
 import path from 'path'
 
-const outDir = path.resolve(__dirname, '../dist/dist')
+const outDir = path.resolve(__dirname, '../dist')
 const plugins = [
 
   nodeResolve(),
