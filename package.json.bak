@@ -1,6 +1,6 @@
 {
   "name": "@element-plus/colors",
-  "version": "1.0.0",
+  "version": "v1.0.2-beta.12",
   "description": "This repository is meant for build color utils for theme customization",
   "scripts": {
     "build": "sh ./scripts/build.sh",
