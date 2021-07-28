@@ -10,7 +10,7 @@ echo "Removing unnecessary test typings"
 rm -rf dist/test
 
 echo "Adding index.js"
-cat > dist/index.js <<EOF
+cat > index.js <<EOF
 'use strict'
 
 if (process.env.NODE_ENV === 'production') {

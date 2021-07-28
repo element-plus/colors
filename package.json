@@ -39,7 +39,7 @@
   "dependencies": {
     "@ctrl/tinycolor": "^3.4.0"
   },
-  "files": ["dist"],
+  "files": ["dist", "index.js"],
   "typings": "dist/src/index.d.ts",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
