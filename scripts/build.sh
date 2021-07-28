@@ -7,8 +7,7 @@ echo "Using rollup to build components"
 yarn build:js
 
 echo "Removing unnecessary test typings"
-rm -rf dist/dist/test
-
+rm -rf dist/test
 
 echo "Adding index.js"
 cat > dist/index.js <<EOF

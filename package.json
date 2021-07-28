@@ -4,7 +4,7 @@
   "description": "This repository is meant for build color utils for theme customization",
   "scripts": {
     "build": "sh ./scripts/build.sh",
-    "build:js": "rollup --config ./configs/rollup.config.js",
+    "build:js": "yarn rollup --config ./configs/rollup.config.js",
     "test": "jest",
     "test:c": "jest --coverage",
     "test:w": "jest --watch",
